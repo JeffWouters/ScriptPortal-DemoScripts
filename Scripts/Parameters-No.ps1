@@ -1,0 +1,1 @@
+Write-Output "This script does not take any parameters."
