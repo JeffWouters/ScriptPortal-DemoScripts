@@ -10,11 +10,6 @@ of supported cities.
 The script is intended as a template or utility for demonstrations, onboarding,
 or data processing scenarios.
 
-.PARAMETER FirstName
-The first name of the person.
-
-This parameter is required and must be a non-empty string.
-
 .PARAMETER LastName
 The last name of the person.
 
@@ -70,7 +65,10 @@ https://learn.microsoft.com/powershell/scripting/developer/help/comment-based-he
 
 [CmdletBinding()]
 param (
-    [Parameter(Mandatory = $true)]
+    [Parameter(
+        Mandatory = $true,
+        HelpMessage = "Please provide the first name."
+    )]
     [ValidateNotNullOrEmpty()]
     [ValidateLength(1, 10)]
     [string]$FirstName,
